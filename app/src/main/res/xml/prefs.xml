@@ -2,13 +2,15 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <CheckBoxPreference
-        android:key="checkBoxPref"
-        android:summary="CheckBox Preference"
-        android:title="CheckBox" />
+        android:key="male"
+        android:defaultValue="true"
+        android:summary="Male?"
+        android:title="Gender" />
 
     <EditTextPreference
-        android:key="editTextPref"
-        android:summary="EditText Preference"
-        android:title="EditText" />
+        android:key="name"
+        android:defaultValue=""
+        android:summary="Enter your name"
+        android:title="Name" />
 
 </PreferenceScreen>

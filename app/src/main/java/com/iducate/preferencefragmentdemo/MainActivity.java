@@ -1,18 +1,48 @@
 package com.iducate.preferencefragmentdemo;
 
 import android.app.Activity;
-import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager.beginTransaction()
-				.replace(android.R.id.content, new MyPreferenceFragment())
-				.commit();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode==1) //from settings
+		{
+			boolean male = MyPreferenceFragment.isMale(this);
+			String name = MyPreferenceFragment.getName(this);
+			String message = "Welcome, "+name+", You are male? "+male;
+			Toast toast = Toast.makeText(this,message,Toast.LENGTH_LONG);
+			toast.show();
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId()==R.id.action_settings)
+		{
+			Intent intent = new Intent(this,SettingsActivity.class);
+			startActivityForResult(intent,1);
+
+		}
+		return super.onOptionsItemSelected(item);
 	}
 }
