@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if (item.getItemId()==R.id.action_settings)
 		{
+			//Start our settingsactivity and liste to result
 			Intent intent = new Intent(this,SettingsActivity.class);
 			startActivityForResult(intent,1);
 

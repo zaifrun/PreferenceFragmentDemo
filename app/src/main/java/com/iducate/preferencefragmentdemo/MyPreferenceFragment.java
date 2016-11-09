@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 public class MyPreferenceFragment extends PreferenceFragment {
 
 	//These values are specifed in the prefs.xml file
+	//and needs to correspond exactly to those in the prefs.xml file
 	private static String SETTINGS_GENDERKEY = "male";
 	private static String SETTINGS_NAMEKEY = "name";
 
@@ -27,6 +28,7 @@ public class MyPreferenceFragment extends PreferenceFragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//adding the prefs
 		addPreferencesFromResource(R.xml.prefs);
 	}
 }
