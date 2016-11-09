@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 
+//extending the standard preference fragment
 public class MyPreferenceFragment extends PreferenceFragment {
 
 	//These values are specifed in the prefs.xml file
