@@ -16,6 +16,6 @@ public class SettingsActivity extends Activity  {
                 .commit();
         //note - there is not setContentView and no xml layout
         //for this activity. Because that is defined 100 %
-        //in the fragment
+        //in the fragment (MyPreferencesFragment)
     }
 }
