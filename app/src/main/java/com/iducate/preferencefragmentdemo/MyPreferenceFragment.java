@@ -26,7 +26,6 @@ public class MyPreferenceFragment extends PreferenceFragment {
 
 	public static String getName(Context context)
 	{
-
 		return PreferenceManager.getDefaultSharedPreferences(context).getString(SETTINGS_NAMEKEY, "");
 	}
 
