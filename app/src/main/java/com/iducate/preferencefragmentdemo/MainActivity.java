@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	//This method updates our text views.
 	public void updateUI(String name, boolean male)
 	{
 		TextView myName = (TextView) findViewById(R.id.myName);

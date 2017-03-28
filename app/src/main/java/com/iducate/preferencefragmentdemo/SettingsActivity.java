@@ -11,6 +11,8 @@ public class SettingsActivity extends Activity  {
         super.onCreate(savedInstanceState);
 
         // Display the fragment as the main content.
+        //note that the ID named "content" is defined by Android -
+        //it is NOT an identifier we define in .xml
        getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new MyPreferenceFragment())
                 .commit();
