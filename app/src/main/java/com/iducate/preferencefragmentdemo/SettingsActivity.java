@@ -16,7 +16,7 @@ public class SettingsActivity extends Activity  {
        getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new MyPreferenceFragment())
                 .commit();
-        //note - there is not setContentView and no xml layout
+        //note - there is no setContentView and no xml layout
         //for this activity. Because that is defined 100 %
         //in the fragment (MyPreferencesFragment)
     }

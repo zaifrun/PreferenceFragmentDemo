@@ -20,7 +20,6 @@ public class MyPreferenceFragment extends PreferenceFragment {
 	//get the values.
 	public static boolean isMale(Context context)
 	{
-
 			return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(SETTINGS_GENDERKEY, true);
 	}
 
