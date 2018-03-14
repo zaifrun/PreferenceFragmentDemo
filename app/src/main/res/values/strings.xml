@@ -7,5 +7,7 @@
     <string name="enterName"> Enter name</string>
     <string name="myName">Your name: </string>
     <string name="myGender">Your gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 
 </resources>

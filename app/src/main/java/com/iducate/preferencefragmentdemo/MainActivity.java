@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	private final int RESULT_CODE_PREFERENCES = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,18 +31,18 @@ public class MainActivity extends Activity {
 	//This method updates our text views.
 	public void updateUI(String name, boolean male)
 	{
-		TextView myName = (TextView) findViewById(R.id.myName);
-		TextView myGender = (TextView) findViewById(R.id.myGender);
+		TextView myName = findViewById(R.id.myName);
+		TextView myGender = findViewById(R.id.myGender);
 		myName.setText(name);
 		if (male)
-			myGender.setText("Male");
+			myGender.setText(R.string.male);
 		else
-			myGender.setText("Female");
+			myGender.setText(R.string.female);
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode==1) //the code means we came back from settings
+		if (requestCode==RESULT_CODE_PREFERENCES) //the code means we came back from settings
 		{
 			//I can can these methods like this, because they are static
 			boolean male = MyPreferenceFragment.isMale(this);
@@ -62,7 +63,7 @@ public class MainActivity extends Activity {
 			//Start our settingsactivity and listen to result - i.e.
 			//when it is finished.
 			Intent intent = new Intent(this,SettingsActivity.class);
-			startActivityForResult(intent,1);
+			startActivityForResult(intent,RESULT_CODE_PREFERENCES);
 			//notice the 1 here - this is the code we then listen for in the
 			//onActivityResult
 
