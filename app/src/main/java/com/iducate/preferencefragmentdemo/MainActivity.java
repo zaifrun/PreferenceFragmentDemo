@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
 			//when it is finished.
 			Intent intent = new Intent(this,SettingsActivity.class);
 			startActivityForResult(intent,RESULT_CODE_PREFERENCES);
-			//notice the 1 here - this is the code we then listen for in the
+			//notice the Result_CODE here - this is the code we then listen for in the
 			//onActivityResult
 
 		}
